@@ -166,7 +166,11 @@ class Router
                 throw new Exception('Método não permitido', 405);
             }
         }
-        throw new Exception('URL não encontrada', 404);
+        throw new Exception('
+        <body bgcolor="white">
+        <center><h1>404 Not Found</h1></center>
+        <hr><center>URL não encontrada</center>
+        </body>', 404);
     }
 
     /**
@@ -179,11 +183,10 @@ class Router
         try {
             //OBTÉM A ROTA ATUAL
             $route = $this->getRoute();
-            
+
             //VERIIFICA O CONTROLADOR
-            if (!isset($route['controller'])){
+            if (!isset($route['controller'])) {
                 throw new Exception('A URL não pode ser processada', 500);
-                
             }
             //EXECUTA
             return call_user_func($route['controller']);
