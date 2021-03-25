@@ -5,7 +5,7 @@ require __DIR__ . "/vendor/autoload.php";
 use App\Http\Router;
 
 
-define('URL', 'http://localhost/hackaton');
+define('URL', 'http://localhost/php%20poo/hackaton-softex');
 
 $obRouter = new Router(URL);
 
