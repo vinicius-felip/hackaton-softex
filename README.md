@@ -8,4 +8,3 @@ Hackaton oferecido pela SOFTEX como finalização do curso de desenvolvimento de
 - [Izadora](https://github.com/izadora-oliveira)
 - [Nicolas](https://github.com/nicolasmonteiro)
 - [Eduardo](https://github.com/EM180303) 
-- a
