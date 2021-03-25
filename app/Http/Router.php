@@ -166,11 +166,8 @@ class Router
                 throw new Exception('Método não permitido', 405);
             }
         }
-        throw new Exception('
-        <body bgcolor="white">
-        <center><h1>404 Not Found</h1></center>
-        <hr><center>URL não encontrada</center>
-        </body>', 404);
+        $file = __DIR__ . '/../../resources/view/pages/404.html';
+        throw new Exception(file_get_contents($file), 404);
     }
 
     /**
