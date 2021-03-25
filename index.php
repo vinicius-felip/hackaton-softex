@@ -2,18 +2,15 @@
 
 require __DIR__ . "/vendor/autoload.php";
 
-use App\Controller\Pages\Home;
 use App\Http\Router;
-use App\Http\Response;
+
 
 define('URL', 'http://localhost/hackaton');
 
 $obRouter = new Router(URL);
 
-//ROTA HOME
-$obRouter->get('/', [
-    fn () => new Response(200, Home::getHome())
-]);
+//INCLUE AS ROTAS DE PÁGINAS
+include_once __DIR__."/routes/pages.php";
 
 //IMPRIME RESPONSE DA ROTA
 $obRouter->run()->sendResponse();
