@@ -77,7 +77,7 @@ class Request
      */
     public function getQueryParams()
     {
-        return $this->headers;
+        return $this->queryParams;
     }
 
     /**
