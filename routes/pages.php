@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Response;
 use App\Controller\Pages;
+use App\Http\Response;
 
 //ROTA HOME
-$obRouter->get('/', [
-    fn () => new Response(200, Pages\Home::getHome())
-]);
+$obRouter->get('/', [fn () => Pages\Home::getHome()]);
 
+//ROTA SOBRE
+$obRouter->get('/sobre', [fn () => Pages\About::getAbout()]);
