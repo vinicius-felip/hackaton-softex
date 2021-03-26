@@ -3,9 +3,12 @@
 require __DIR__ . "/vendor/autoload.php";
 
 use App\Http\Router;
+use App\Model\Common\Environment;
 use App\Utils\View;
 
-define('URL_BASE', 'http://localhost/hackaton');
+Environment::load(__DIR__);
+
+define('URL_BASE', getenv('URL_BASE'));
 
 
 View::init([
