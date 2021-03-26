@@ -2,6 +2,7 @@
 Hackaton oferecido pela SOFTEX como finalização do curso de desenvolvimento de software
 
 ## Sobre
+Mapeamento de pontos de coleta de materiais descartáveis. Ações para estimular a reciclagem, mostrar sua importância e seus benefícios.
 
 ## Tema
 Objetivos de Desenvolvimento Sustentável (ODS)
