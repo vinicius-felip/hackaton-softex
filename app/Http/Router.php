@@ -4,6 +4,7 @@ namespace App\Http;
 
 use Closure;
 use Exception;
+use ReflectionFunction;
 
 class Router
 {
@@ -72,6 +73,16 @@ class Router
                 unset($params[$key]);
             }
         }
+
+        //VARIAVEIS DA ROTA
+        $params['variables'] = [];
+
+        //PADRAO VALIDAÇÃO DAS VARIAVÉIS DA ROTA
+        $patternVariable = "/{(.*?)}/";
+        if (preg_match_all($patternVariable, $route, $matches)){
+            $route = preg_replace($patternVariable, '(.*?)', $route);
+            $params['variables'] = $matches[1];
+        }   
 
         //PADRAO DE VALIDAÇÃO DA URL
         $patternRoute = '/^' . str_replace('/', '\/', $route) . '$/';
@@ -157,9 +168,17 @@ class Router
         //VALIDA ROTAS
         foreach ($this->routes as $patternRoute => $methods) {
             //VERIFICA SE URI É IGUAL AO PADRÃO
-            if (preg_match($patternRoute, $uri)) {
+            if (preg_match($patternRoute, $uri, $matches)) {
                 //VERIFICA O METODO
                 if (isset($methods[$httpMethod])) {
+                    //REMOVE PRIMEIRA POSIÇÃO
+                    unset($matches[0]);
+
+                    //VARIAVÉIS PROCESSADAS
+                    $keys = $methods[$httpMethod]['variables'];
+                    $methods[$httpMethod]['variables'] = array_combine($keys, $matches);
+                    $methods[$httpMethod]['variables']['request'] = $this->request;
+
                     //RETORNA O METODO
                     return $methods[$httpMethod];
                 }
@@ -185,8 +204,20 @@ class Router
             if (!isset($route['controller'])) {
                 throw new Exception('A URL não pode ser processada', 500);
             }
+
+            //ARGUMENTOS DA FUNÇÃO
+            $args = [];
+
+            //REFLECTION
+            $reflection = new ReflectionFunction($route['controller']);
+            foreach ($reflection->getParameters() as $parameter){
+                $name = $parameter->getName();
+                $args[$name] = $route['variables'][$name] ?? '';
+            }
+                
             //EXECUTA
-            return call_user_func($route['controller']);
+            return call_user_func_array($route['controller'], $args);
+
         } catch (Exception $e) {
             return new Response($e->getCode(), $e->getMessage());
         }
