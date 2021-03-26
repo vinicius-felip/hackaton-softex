@@ -3,6 +3,23 @@
 namespace App\Utils;
 
 class View{
+
+    /**
+     * Variavéis padrões da VIEW
+     * 
+     * @var    array 
+     */
+    private static $vars = [];
+    
+    /**
+     * Método responsável  por  definir os dados inicias da classe
+     *
+     * @param  array $vars
+     */
+    public static function init($vars = [])
+    {
+        self::$vars = $vars;
+    }
     
     /**
      * Método responsável por retornar o conteúdo de uma view
@@ -27,6 +44,10 @@ class View{
         //CONTEUDO DA VIEW
         $contentView = self::getContentView($view);
 
+        //MERGE DE VARIAVÉIS DA VIEW
+        $vars = array_merge(self::$vars, $vars);
+    
+        
         //CHAVES DO ARRAY DE VARIAVEIS
         $keys = array_map(function($key){
             return '{{'.$key.'}}';
