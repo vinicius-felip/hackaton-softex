@@ -7,7 +7,7 @@ class Environment
     /**
      * Método responsável por carregar as variavéis de ambiente no projeto
      *
-     * @param  mixed $dir caminho absoluto da pasta onde encontra-se o arquivo .env
+     * @param  string $dir caminho absoluto da pasta onde encontra-se o arquivo .env
      */
     public static function load($dir)
     {

@@ -14,8 +14,7 @@ class Home extends Page{
      * @return string
      */
     public static function getHome(){
-      //VIEW DA HOME
-      
+      //VIEW DA HOME      
       $content = View::render('pages/home',[
         "name"        => 'HOME',
         "description" => ''
@@ -24,5 +23,6 @@ class Home extends Page{
 
       //RETORNA A VIEW DA PAGINA
       return new Response(200, parent::getPage('TITULO', $content));
-    }
+    } 
+
 }
