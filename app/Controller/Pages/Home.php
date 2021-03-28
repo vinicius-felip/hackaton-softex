@@ -17,7 +17,7 @@ class Home extends Page{
       //VIEW DA HOME      
       $content = View::render('pages/home',[
         "name"        => 'HOME',
-        "description" => ''
+        "description" => '',
       ]);
 
 

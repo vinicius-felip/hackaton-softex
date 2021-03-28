@@ -4,6 +4,8 @@ require __DIR__ . '/../../includes/app.php';
 
 use App\Model\Entity\Marker;
 
+$where = isset($_GET['status']) ? "status = 'on'" : null;
+
 function parseToXML($htmlStr)
 {
     $xmlStr = str_replace('<', '&lt;', $htmlStr);
@@ -14,7 +16,7 @@ function parseToXML($htmlStr)
     return $xmlStr;
 }
 
-$results = Marker::getMarkers();
+$results = Marker::getMarkers($where);
 
 header("Content-type: text/xml");
 
@@ -24,12 +26,10 @@ echo '<markers>';
 while ($marker = $results->fetchObject(Marker::class)){
     echo '<marker ';
     echo 'id="' . $marker->id . '" ';
-    echo 'name="' . parseToXML($marker->name) . '" ';
-    echo 'address="' . parseToXML($marker->address) . '" ';
     echo 'lat="' . $marker->lat . '" ';
     echo 'lng="' . $marker->lng . '" ';
     echo 'type="' . $marker->type . '" ';
     echo '/>';
 }
-// End XML file
+
 echo '</markers>';
