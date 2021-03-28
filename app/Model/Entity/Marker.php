@@ -50,6 +50,13 @@ class Marker
      */
     public $type;
 
+    /**
+     * Tipo do marcador
+     *
+     * @var int
+     */
+    public $status;
+
 
     /**
      * Método responsável por cadastrar a instância atual no Banco de Dados
@@ -60,16 +67,29 @@ class Marker
     {
         //INSERE NO BANCO DE DADOS
         $this->id = (new DataBase('markers'))->insert([
-            'address' => $this->address,
-            'name'    => $this->name,
-            'lat'     => $this->lat,
-            'lng'     => $this->lng,
-            'type'    => $this->type,
+            'lat'    => $this->lat,
+            'lng'    => $this->lng,
+            'type'   => $this->type,
+            'status' => 'off'
         ]);
 
         return true;
     }
-    
+
+    /**
+     * Método responsável por cadastrar a instância atual no Banco de Dados
+     *
+     * @return void
+     */
+    public function updateMarker()
+    {
+        //INSERE NO BANCO DE DADOS
+        $this->id = (new DataBase('markers'))->update([
+            'status' => $this->status
+        ], "id = $this->id");
+        return true;
+    }
+
     /**
      * Método que retorna os dados dos marcadores do banco de dados
      *
@@ -81,6 +101,6 @@ class Marker
      */
     public static function getMarkers($where =  null, $order = null, $limit = null,  $field = '*')
     {
-        return (new DataBase('markers'))->select($where,$order,$limit,$field);
+        return (new DataBase('markers'))->select($where, $order, $limit, $field);
     }
 }
