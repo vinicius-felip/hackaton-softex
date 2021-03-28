@@ -16,7 +16,7 @@ class About extends Page{
     public static function getAbout(){
       //VIEW DA SOBRE
       
-      $content = View::render('pages/sobre',[
+      $content = View::render('pages/about',[
         "name"        => 'SOBRE',
         "description" => ''
       ]);
