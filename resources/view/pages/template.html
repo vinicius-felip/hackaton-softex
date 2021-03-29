@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
@@ -32,12 +31,12 @@ body, html {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-orange w3-card" id="myNavbar">
-    <img class="w3-image" src="/resources/view/images/img/recycling-svgrepo-com.png" alt="lixeiroamarelo" width="60" height="60">
+    <img class="w3-image" src="imagens/recycling-svgrepo-com.png" alt="lixeiroamarelo" width="60" height="60">
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="#about" class="w3-bar-item w3-button">Sobre</a>
-      <a href="#beneficios" class="w3-bar-item w3-button">Benefícios</a>
       <a href="#recicle" class="w3-bar-item w3-button">3R</a>
+      <a href="#beneficios" class="w3-bar-item w3-button">Benefícios</a>
       <a href="#team" class="w3-bar-item w3-button">Time</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -52,71 +51,61 @@ body, html {
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#beneficios" onclick="w3_close()" class="w3-bar-item w3-button">BENEFICIOS</a>
   <a href="#recicle" onclick="w3_close()" class="w3-bar-item w3-button">RECICLE</a>
+  <a href="#beneficios" onclick="w3_close()" class="w3-bar-item w3-button">BENEFICIOS</a>
   <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
 </nav>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1800px;" id="home">
-  <img class="w3-image" src="/resources/view/images/img/lixos.png" alt="lixeiros">
+  <img class="w3-image" src="imagens/lixos.png" alt="lixeiros">
 </header>
 
-<!-- First Grid -->
-<div class="w3-container w3-white" style="padding:50px 16px" id="about">
+<!-- Sobre -->
+<div class="w3-container w3-light-green" style="padding:20px 16px" id="about">
   <div class="w3-content">
-    <div class="w3-twothird">
+    <div class="w3-right">
       <h1>Sobre</h1>
       <h5 class="w3-padding-32">Com o intuito de informar e tornar mais rápido a localização dos pontos de coleta no recife, que foi criado este site.
         Aqui você pode escolher o ponto de coleta pelo tipo de residuo que queira entregar.</h5>
-
-      <p class="w3-text-grey"></p>
-    </div>
-
-    <div class="w3-third w3-center">
-      <img class="w3-image" src="/resources/view/images/img/simboloreciclagem.jpg" alt="lixeiroamarelo" width="200" height="200">
-    </div>
-  </div>
-</div>
-
-<!-- Second Grid -->
-
-<div class="w3-container w3-yellow" style="padding:50px 16px" id="beneficios">
-  <div class="w3-content">
-    <div class="w3-third w3-center">
-      <img class="w3-image" src="/resources/view/images/img/lixeirosdesenhos.png" alt="lixeiroamarelo" width="290" height="300">
-    </div>
-
-    <div class="w3-twothird">
-      <h1>Benefícios</h1>
-      <h5 class="w3-padding-32">Reciclar significa dar um novo destino a produtos usados, sendo uma das armas mais eficientes contra a poluição, pois além de evitar a retirada de matéria prima da natureza, termina por dar um destino correto para o que seria considerado “lixo”.</h5>
-
       <p class="w3-text-grey"></p>
     </div>
   </div>
 </div>
 
 <!-- reciclar, reutilizar, reduzir -->
-<div class="w3-container w3-center w3-blue" style="padding:50px 20px" id="recicle">
-  <h3 class="w3-center">3 Rs da Sustentabilidade</h3>
+<div class="w3-container w3-center w3-blue" id="recicle">
+  <h3 class="w3-center">3 Rs da Sustentabilidade <img class="w3-image" src="imagens/simbolorecicle.png" alt="lixeiroamarelo" width="100" height="100"></h3>
     <div class="w3-third">
       <p class="w3-large">Reduzir</p>
-      <p style="padding:20px 30px">Reduzir consiste em ações que visem à diminuição da geração de resíduos, seja por meio da minimização na fonte ou por meio da redução do desperdício. Na redução, o objetivo é comprar bens e serviços de acordo com nossas necessidades para evitar desperdícios, adotando um consumo não apenas com consciência ambiental, mas também econômico. Exemplos de atitudes que visam à redução do desperdício são: uso racional da água, economia de energia elétrica e de combustíveis.</p>
+      <p style="padding:20px 30px">é a primeira ação para fomentar um cenário de reciclagem eficaz, já que será muito díficil conseguir bons índices de reciclagem se a quantidade de material descartado continuar a crescer. Então repense todos os resíduos que possam sair de cena ou ser substituído por reutilizável.</p>
     </div>
     <div class="w3-third">
       <p class="w3-large">Reutilizar</p>
-      <p style="padding:20px 30px">Quando um produto é reutilizado, este é reaproveitado na mesma função ou em diversas outras possibilidades de uso. Assim, papéis, por exemplo, podem ser utilizados em blocos de rascunho ou garrafas podem se tornar objetos de decoração.
-        Jogamos muitas coisas no lixo que poderiam ser reutilizadas para outros fins. Além disso, vale lembrar que a doação também pode ser uma boa alternativa, pois outra pessoa que necessita pode utilizar aquele objetivo que para você não tem mais utilidade.</p>
+      <p style="padding:20px 30px">Não deu para reduzir? Busque reutilizar ao máximo. Baldes de insumos não contaminantes, potes de vidros para armazenar alimentos, se o seu negócio for de alimentos aproveite para utilizar todas as partes dos ingredientes utilizados.</p>
     </div>
     <div class="w3-third">
       <p class="w3-large">Reciclar</p>
-      <p style="padding:20px 30px">A reciclagem envolve o processamento de um material com sua transformação física ou química, seja para sua reutilização sob a forma original ou como matéria-prima para produção de novos materiais com finalidades diversas. Por exemplo, pneus antigos podem se tornar componentes para asfalto ou latas de alumínio podem ser fundidas para darem origem a novas latas.</p>
-    </div>  
+      <p style="padding:20px 30px">o que não der para reutilizar ou reduzir, direcione para reciclagem. Se eles não forem recicláveis volte para o primeiro item e reduza ou substitua por materiais, pelo menos, recicláveis.</p>
+    </div>
+</div>
+
+<!-- Benefícios -->
+
+<div class="w3-container w3-white" id="beneficios">
+  <div class="w3-content">
+      <h1 class= "w3-text-green">Porque reciclar</h1>
+      <h5 class="w3-padding-32 w3-text-green">As cidades produzem, diariamente, milhares de toneladas de lixo e esse é um problema que vem se tornando cada vez maior. No entanto, estamos chegando a um ponto em que já não é mais possível produzir e viver nas grandes cidades sem a implantação de medidas mais eficazes. Os aterros já não conseguem absorver a quantidade de lixo e a degradação do meio ambiente vem atingindo proporções perigosas para nossa sobrevivência no planeta.
+
+        Nossos rios e represas estão cada vez mais contaminados; ratos e insetos proliferam-se; as ruas estão sujas favorecendo todo tipo de doenças.
+        
+        Em função disso, o poder público e a própria sociedade vêm buscando soluções para preservação do meio ambiente e da nossa própria espécie.</h5>
+  </div>
 </div>
 
 <!-- Footer -->
 <footer class="w3-container w3-black w3-padding-16 w3-opacity">
-    <a href="#home" class="w3-button w3-light-grey w3-right"><i class="fa fa-arrow-up w3-margin-right"></i>Para cima</a>
+    <a href="#home" class="w3-button w3-orange w3-right"><i class="fa fa-arrow-up w3-margin-right"></i></a>
     <div class="w3-card" id="team">
       <h3>Eduardo Marques </h3>
       <h3>Izadora oliveira</h3>
@@ -124,7 +113,7 @@ body, html {
       <h3>Vinicius Felipe </h3>
     </div>
     <div class="w3-xlarge w3-padding-20 w3-center">
-    <i class="fa fa-github w3-hover-opacity"><a href="https://github.com/viniciusFelipeS/hackaton-softex" target="_blank">Github</a></i>
+    <i class="fa fa-github w3-hover-opacity"><a href="https://github.com/viniciusFelipeS/hackaton-softex.git" target="_blank">Github</a></i>
     </div>
 </footer>
 
