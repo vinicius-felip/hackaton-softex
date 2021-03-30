@@ -18,6 +18,7 @@ function initMap() {
     var xml = data.responseXML;
     var markers = xml.documentElement.getElementsByTagName("marker");
     Array.prototype.forEach.call(markers, function (markerElem) {
+      var name = markerElem.getAttribute("name");
       var type = markerElem.getAttribute("type");
       var point = new google.maps.LatLng(
         parseFloat(markerElem.getAttribute("lat")),
@@ -25,9 +26,13 @@ function initMap() {
       );
       var infowincontent =`<div class="container">
                             <div class="row g-1" style="width: 150px">
-                              <div class="col-12">
-                                <label>Tipo: </label>
-                                <select  id="type" disabled>
+                                <div class="col-12">
+                                <label for="name" class="form-label">Nome do local</label required>
+                                <input value="${name}" type="text" class="form-control form-control-sm" id="name" readonly>
+                              </div>
+                          <div class="col-12">
+                            <label for="type" class="form-label">Tipo: </label>
+                            <select id="type" class="form-select" aria-label="Tipos" disabled>
                                   <option value="0" ${type == '0' ? 'selected': ''}>Orgânico</option>
                                   <option value="1" ${type == '1' ? 'selected': ''}>Plastico</option>
                                   <option value="2" ${type == '2' ? 'selected': ''}>Eletrônico</option>
@@ -35,9 +40,6 @@ function initMap() {
                                   <option value="4" ${type == '4' ? 'selected': ''}>Metal</option>
                                   <option value="5" ${type == '5' ? 'selected': ''}>Papel</option>
                                 </select>
-                              </div>
-                              <div class="col-12">
-                                <label>Nome: </label>
                               </div>
                             </div>
                           </div>`;

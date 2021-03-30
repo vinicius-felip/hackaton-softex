@@ -1,3 +1,14 @@
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/mac.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -34,6 +45,9 @@ i{
   color: blue;
 }
 
+.about{
+  overflow: auto;
+}
 
 
 .dropdown-toggle { outline: 0; }

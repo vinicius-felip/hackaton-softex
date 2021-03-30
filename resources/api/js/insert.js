@@ -28,25 +28,26 @@ var addMarker = google.maps.event.addListener(map, "click", function (e) {
     map: map,
     id: "marker_" + markerId,
     html: `<div class="container">
-            <div class="row g-2" style="width:200px">
+            <div class="row g-3" style="width:200px">
               <div class="col-12">
-              <label> Nome do Local: </label>
-              <input type="text" id="checkbox" value="" "checked" : ""
-              }>
+                <label for="name" class="form-label">Nome do local</label required>
+                <input type="text" class="form-control" id="name" autocomplete="off">
               </div>
               <div class="col-12">
-              <label>Tipo: </label>
-              <select  id="type">
-                <option  selected>Selecione o tipo de coleta</option>
-                <option value="0" >Orgânico</option>
-                <option value="1" >Plastico</option>
-                <option value="2">Eletrônico</option>
-                <option value="3" >Vidro</option>
-                <option value="4" >Metal</option>
-                <option value="5" >Papel</option>
-              </select>
+                <label for="type" class="form-label">Tipo: </label>
+                <select id="type" class="form-select" aria-label="Tipos" >
+                  <option selected>Selecione</option>
+                  <option value="0" >Orgânico</option>
+                  <option value="1" >Plastico</option>
+                  <option value="2" >Eletrônico</option>
+                  <option value="3" >Vidro</option>
+                  <option value="4" >Metal</option>
+                  <option value="5" >Papel</option>
+                </select>
               </div>
-              <a class="btn btn-sm btn-success" role="button" value='Send' onclick='saveData(${lat+','+lng})'>Salvar</a>
+              <a class="btn btn-sm btn-success" role="button" value='Send' onclick='saveData(${
+                lat + "," + lng
+              })'>Salvar</a>
             </div>
           </div>`,
   });
@@ -75,6 +76,7 @@ function saveData(lat, lng) {
   $.post(
     "hackaton/inserir",
     {
+      name: document.getElementById("name").value,
       lat: lat,
       lng: lng,
       type: document.getElementById("type").value,

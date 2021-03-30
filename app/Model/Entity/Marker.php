@@ -15,14 +15,6 @@ class Marker
     public $id;
 
     /**
-     * Endreço do marcador
-     *
-     * @var string
-     */
-    public $address;
-
-
-    /**
      * Nomem do marcador
      *
      * @var string
@@ -65,12 +57,14 @@ class Marker
      */
     public function insertMarker()
     {
+
         //INSERE NO BANCO DE DADOS
         $this->id = (new DataBase('markers'))->insert([
-            'lat'    => $this->lat,
-            'lng'    => $this->lng,
-            'type'   => $this->type,
-            'status' => 'off'
+            'name'    => $this->name,
+            'lat'     => $this->lat,
+            'lng'     => $this->lng,
+            'type'    => $this->type,
+            'status'  => 'off'
         ]);
 
         return true;

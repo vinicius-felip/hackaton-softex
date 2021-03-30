@@ -26,6 +26,7 @@ echo '<markers>';
 while ($marker = $results->fetchObject(Marker::class)){
     echo '<marker ';
     echo 'id="' . $marker->id . '" ';
+    echo 'name="' . $marker->name . '" ';
     echo 'lat="' . $marker->lat . '" ';
     echo 'lng="' . $marker->lng . '" ';
     echo 'type="' . $marker->type . '" ';
