@@ -46,6 +46,6 @@ class Insert extends Page{
         //CADASTRAR
         $obMarker->insertMarker();
         
-        return new Response(200, 'Esperando a aprovação do administrador');
+        return new Response(200, 'Admistrador irá avaliar o ponto');
     }
 }

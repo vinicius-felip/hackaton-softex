@@ -1,7 +1,8 @@
 <?php
 
+use App\Controller\Auth\Auth;
 use App\Controller\Pages;
-use App\Http\Response;
+
 
 //ROTA HOME
 $obRouter->get('/', [fn () => Pages\Home::getHome()]);
@@ -21,3 +22,8 @@ $obRouter->get('/admin', [fn () => Pages\Admin::getMarker()]);
 //ROTA UPDATE MARCADOR (insert)
 $obRouter->post('/admin', [fn ($request) => Pages\Admin::updateMarker($request)]);
 
+//ROTA AUTENTICAÇÃO FACEBOOK
+$obRouter->get('/facebook', [fn ($request) => Auth::getHome($request)]);
+
+//ROTA SAIR FACEBOOK
+$obRouter->get('/sair', [fn () => Auth::sair()]);

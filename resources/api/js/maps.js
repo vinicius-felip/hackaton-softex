@@ -1,8 +1,11 @@
 function initMap() {
   const image = [
-    "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-    "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
-    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    "resources/view/images/lixo1.png",
+    "resources/view/images/lixo2.png",
+    "resources/view/images/lixo3.png",
+    "resources/view/images/lixo4.png",
+    "resources/view/images/lixo5.png",
+    "resources/view/images/lixo6.png",
   ];
 
   var map = new google.maps.Map(document.getElementById("map"), {
@@ -20,13 +23,24 @@ function initMap() {
         parseFloat(markerElem.getAttribute("lat")),
         parseFloat(markerElem.getAttribute("lng"))
       );
-      var infowincontent = document.createElement("div");
-      var strong = document.createElement("strong");
-      strong.textContent = type;
-      infowincontent.appendChild(strong);
-      infowincontent.appendChild(document.createElement("br"));
-      var text = document.createElement("text");
-      infowincontent.appendChild(text);
+      var infowincontent =`<div class="container">
+                            <div class="row g-1" style="width: 150px">
+                              <div class="col-12">
+                                <label>Tipo: </label>
+                                <select  id="type" disabled>
+                                  <option value="0" ${type == '0' ? 'selected': ''}>Orgânico</option>
+                                  <option value="1" ${type == '1' ? 'selected': ''}>Plastico</option>
+                                  <option value="2" ${type == '2' ? 'selected': ''}>Eletrônico</option>
+                                  <option value="3" ${type == '3' ? 'selected': ''}>Vidro</option>
+                                  <option value="4" ${type == '4' ? 'selected': ''}>Metal</option>
+                                  <option value="5" ${type == '5' ? 'selected': ''}>Papel</option>
+                                </select>
+                              </div>
+                              <div class="col-12">
+                                <label>Nome: </label>
+                              </div>
+                            </div>
+                          </div>`;
       var marker = new google.maps.Marker({
         map: map,
         position: point,

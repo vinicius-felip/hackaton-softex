@@ -7,8 +7,13 @@
   background-color: #d6ab84;
 }
 
-i{
+i{        
   font-size: 20px;
+}
+
+.facebook{
+  font-size: 40px;
+  color: blue;
 }
 
 .bd-placeholder-img {

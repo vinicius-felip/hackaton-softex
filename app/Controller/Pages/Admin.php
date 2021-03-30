@@ -24,7 +24,7 @@ class Admin extends Page{
     } 
     
     /**
-     * Método responsável por inserir um marcador no bando de dados
+     * Método responsável por atualizar um marcador no bando de dados
      *
      * @param  Request $request
      * @return string
@@ -40,9 +40,9 @@ class Admin extends Page{
         $obMarker->id = $postVars['id'];
         $obMarker->status = $postVars['status'];
 
-        //CADASTRAR
+        //ATUALIZAR
         $obMarker->updateMarker();
         
-        return new Response(200, 'Esperando a aprovação do administrador');
+        return new Response(200, 'Concluido');
     }
 }

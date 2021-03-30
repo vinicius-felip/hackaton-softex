@@ -1,9 +1,5 @@
-var infowindow;
 var map;
-var icon = [
-  "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-  "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
-];
+var icon = "resources/view/images/lixo7.png";
 var myOptions = {
   zoom: 12,
   center: new google.maps.LatLng(-7.978248518771446, -34.8768174365134),
@@ -21,6 +17,7 @@ var getLatLng = function (lat, lng) {
   return new google.maps.LatLng(lat, lng);
 };
 
+var infoWindow = new google.maps.InfoWindow();
 var addMarker = google.maps.event.addListener(map, "click", function (e) {
   var lat = e.latLng.lat();
   var lng = e.latLng.lng();
@@ -29,37 +26,35 @@ var addMarker = google.maps.event.addListener(map, "click", function (e) {
     position: getLatLng(lat, lng),
     sended: true,
     map: map,
-    animation: google.maps.Animation.DROP,
     id: "marker_" + markerId,
-    html: `<div id='info_${markerId}'>
-                <div class='map1'>
-                    <p>Tipo de ponto de coleta:</p>
-                    <select name="type" id="type">
-                        <option value="0">Organico</option>
-                        <option value="1">Papel</option>
-                        <option value="2">Vidro</option>
-                        <option value="3">Metal</option>
-                    </select>
-                    <button role="button" value='Send' onclick='saveData(${lat},${lng})'>Enviar</button>
-                </div>
-            </div>`,
+    html: `<div class="container">
+            <div class="row g-2" style="width:200px">
+              <div class="col-12">
+              <label> Nome do Local: </label>
+              <input type="text" id="checkbox" value="" "checked" : ""
+              }>
+              </div>
+              <div class="col-12">
+              <label>Tipo: </label>
+              <select  id="type">
+                <option  selected>Selecione o tipo de coleta</option>
+                <option value="0" >Orgânico</option>
+                <option value="1" >Plastico</option>
+                <option value="2">Eletrônico</option>
+                <option value="3" >Vidro</option>
+                <option value="4" >Metal</option>
+                <option value="5" >Papel</option>
+              </select>
+              </div>
+              <a class="btn btn-sm btn-success" role="button" value='Send' onclick='saveData(${lat+','+lng})'>Salvar</a>
+            </div>
+          </div>`,
   });
   markers[markerId] = marker;
-  bindMarkerinfo(marker);
+  infoWindow.setContent(marker.html);
+  infoWindow.open(map, marker);
   bindMarkerEvents(marker);
 });
-
-var bindMarkerinfo = function (marker) {
-  google.maps.event.addListener(marker, "click", function (point) {
-    var markerId = getMarkerUniqueId(point.latLng.lat(), point.latLng.lng());
-    var marker = markers[markerId];
-    if (marker.sended) {
-      infowindow = new google.maps.InfoWindow();
-      infowindow.setContent(marker.html);
-      infowindow.open(map, marker);
-    }
-  });
-};
 
 var bindMarkerEvents = function (marker) {
   google.maps.event.addListener(marker, "rightclick", function (point) {
@@ -77,7 +72,6 @@ var removeMarker = function (marker, markerId) {
 };
 
 function saveData(lat, lng) {
-  var type = document.getElementById("type").value;
   $.post(
     "hackaton/inserir",
     {
@@ -89,12 +83,10 @@ function saveData(lat, lng) {
       var markerId = getMarkerUniqueId(lat, lng);
       var manual_marker = markers[markerId];
       manual_marker.sended = false;
-      manual_marker.setIcon(icon[type]);
-      infowindow.close();
-      infowindow.setContent(
-        `<div style=' color: purple; font-size: 25px;'>${msg}</div>`
-      );
-      infowindow.open(map, manual_marker);
+      manual_marker.setIcon(icon);
+      infoWindow.close();
+      infoWindow.setContent(msg);
+      infoWindow.open(map, manual_marker);
     }
   );
 }

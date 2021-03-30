@@ -77,14 +77,14 @@ class Marker
     }
 
     /**
-     * Método responsável por cadastrar a instância atual no Banco de Dados
+     * Método responsável por atualizar um marcador
      *
      * @return void
      */
     public function updateMarker()
     {
         //INSERE NO BANCO DE DADOS
-        $this->id = (new DataBase('markers'))->update([
+        (new DataBase('markers'))->update([
             'status' => $this->status
         ], "id = $this->id");
         return true;
