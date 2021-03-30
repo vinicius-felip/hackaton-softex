@@ -1,6 +1,32 @@
-<H1>
-    TOPO DA PAGINA
-    Eduardo
-
-    Vinicius
-</H1>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-orange w3-card" id="myNavbar">
+      <img class="w3-image" src="imagens/recycling-svgrepo-com.png" alt="lixeiroamarelo" width="60" height="60">
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="#about" class="w3-bar-item w3-button">Sobre</a>
+        <a href="#recicle" class="w3-bar-item w3-button">3R</a>
+        <a href="#porque" class="w3-bar-item w3-button">Porque Reciclar</a>
+        <a href="#team" class="w3-bar-item w3-button">Time</a>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+  
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#recicle" onclick="w3_close()" class="w3-bar-item w3-button">RECICLE</a>
+    <a href="#porque" onclick="w3_close()" class="w3-bar-item w3-button">PORQUE</a>
+    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  </nav>
+  
+  <!-- Header -->
+  <header class="w3-display-container w3-content w3-wide" style="max-width:1800px;" id="home">
+    <img class="w3-image" src="imagens/lixos.png" alt="lixeiros">
+  </header>
