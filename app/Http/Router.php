@@ -39,7 +39,7 @@ class Router
 
     public function __construct($url)
     {
-        $this->request = new Request;
+        $this->request = new Request($this);
         $this->url     = $url;
         $this->setPrefix();
     }
@@ -73,24 +73,24 @@ class Router
                 unset($params[$key]);
             }
         }
-
+        
         //VARIAVEIS DA ROTA
         $params['variables'] = [];
-
+        
         //PADRAO VALIDAÇÃO DAS VARIAVÉIS DA ROTA
         $patternVariable = "/{(.*?)}/";
         if (preg_match_all($patternVariable, $route, $matches)){
             $route = preg_replace($patternVariable, '(.*?)', $route);
             $params['variables'] = $matches[1];
         }   
-
+        
         //PADRAO DE VALIDAÇÃO DA URL
         $patternRoute = '/^' . str_replace('/', '\/', $route) . '$/';
-
+        
         //ADICIONA A ROTA DENTRO DA CLASSE
         $this->routes[$patternRoute][$method] = $params;
     }
-
+    
     /**
      * Método responsável por definir uma rota de GET
      *
@@ -161,7 +161,6 @@ class Router
     {
         //URI
         $uri =  $this->getUri();
-
         //METHOD
         $httpMethod = $this->request->getHttpMethod();
 
@@ -173,12 +172,11 @@ class Router
                 if (isset($methods[$httpMethod])) {
                     //REMOVE PRIMEIRA POSIÇÃO
                     unset($matches[0]);
-
+                    
                     //VARIAVÉIS PROCESSADAS
                     $keys = $methods[$httpMethod]['variables'];
                     $methods[$httpMethod]['variables'] = array_combine($keys, $matches);
                     $methods[$httpMethod]['variables']['request'] = $this->request;
-
                     //RETORNA O METODO
                     return $methods[$httpMethod];
                 }

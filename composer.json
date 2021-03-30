@@ -4,5 +4,8 @@
         "psr-4": {
             "App\\": "app/"
         }
+    },
+    "require": {
+        "league/oauth2-facebook": "2.0.*"
     }
 }

@@ -5,6 +5,7 @@ require __DIR__ . "/../vendor/autoload.php";
 use App\Model\Common\Environment;
 use App\Utils\View;
 
+
 //CARREGA AS VARIAVÉIS DE AMBIENTE
 Environment::load(__DIR__.'/../');
 
