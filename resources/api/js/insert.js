@@ -2,7 +2,18 @@ var map;
 var icon = "resources/view/images/lixo7.png";
 var myOptions = {
   zoom: 12,
-  center: new google.maps.LatLng(-7.978248518771446, -34.8768174365134),
+  center: new google.maps.LatLng(-8.067489, -34.926224),
+  styles: [
+    {
+      "featureType": "poi",
+      "elementType": "labels",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    }
+  ],
   mapTypeId: "roadmap",
 };
 map = new google.maps.Map(document.getElementById("map"), myOptions);

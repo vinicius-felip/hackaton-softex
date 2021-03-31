@@ -9,8 +9,19 @@ function initMap() {
   ];
 
   var map = new google.maps.Map(document.getElementById("map"), {
-    center: new google.maps.LatLng(-7.978248518771446, -34.8768174365134),
+    center: new google.maps.LatLng(-8.067489, -34.926224),
     zoom: 12,
+    styles: [
+      {
+        "featureType": "poi",
+        "elementType": "labels",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      }
+    ]
   });
   var infoWindow = new google.maps.InfoWindow();
 
@@ -27,12 +38,12 @@ function initMap() {
       var infowincontent =`<div class="container">
                             <div class="row g-1" style="width: 150px">
                                 <div class="col-12">
-                                <label for="name" class="form-label">Nome do local</label required>
-                                <input value="${name}" type="text" class="form-control form-control-sm" id="name" readonly>
+                                <label for="name" class="form-label"><b>Nome do local:</b></label required>
+                                <p>${name}</p>
                               </div>
                           <div class="col-12">
                             <label for="type" class="form-label">Tipo: </label>
-                            <select id="type" class="form-select" aria-label="Tipos" disabled>
+                            <select id="type" class="form-select form-select-sm" aria-label="Tipos" disabled>
                                   <option value="0" ${type == '0' ? 'selected': ''}>Orgânico</option>
                                   <option value="1" ${type == '1' ? 'selected': ''}>Plastico</option>
                                   <option value="2" ${type == '2' ? 'selected': ''}>Eletrônico</option>
