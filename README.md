@@ -30,7 +30,7 @@ https://youtu.be/9YKGhhUAaQY
 
 - ![](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-# :busts_in_silhouette: **Autorew**
+# :busts_in_silhouette: **Autores**
 Nome <img src="https://raw.githubusercontent.com/devicons/devicon/2809b567852a4648062a2d3e7c1c531367458c0b/icons/github/github-original.svg" height="15"> | E-mail
 :---|:---:
 [Vinícius](https://github.com/viniciusFelipeS) | viniciusfelipe.xd@gmail.com 
