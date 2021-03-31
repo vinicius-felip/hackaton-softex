@@ -2,6 +2,7 @@
 
 namespace App\Controller\Pages;
 
+use App\Controller\Auth\Auth;
 use App\Utils\View;
 use App\Http\Response;
 use App\Model\Entity\Marker;
@@ -14,6 +15,9 @@ class Admin extends Page{
      * @return string
      */
     public static function getMarker(){
+      //VERIFICAR SE ADMIN ESTÁ LOGADO
+      Auth::logged();
+
       //VIEW DA MARKER
       
       $content = View::render('pages/admin',[
