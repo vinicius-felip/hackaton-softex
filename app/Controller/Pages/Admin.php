@@ -20,7 +20,7 @@ class Admin extends Page{
       ]);
 
       //RETORNA A VIEW DA PAGINA
-      return new Response(200, parent::getPage('TITULO', $content));
+      return new Response(200, parent::getPage('Recicle Já', $content));
     } 
     
     /**
