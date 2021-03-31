@@ -17,7 +17,6 @@ https://youtu.be/9YKGhhUAaQY
 *ODS 12 – Consumo e produção responsáveis*
 
 ## :computer: **Tecnologias utilizadas**
-<br/>
  
 - ![](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 
@@ -31,10 +30,13 @@ https://youtu.be/9YKGhhUAaQY
 
 - ![](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-# :busts_in_silhouette: **Colaboradores**
+# :busts_in_silhouette: **Autorew**
+Nome <img src="https://raw.githubusercontent.com/devicons/devicon/2809b567852a4648062a2d3e7c1c531367458c0b/icons/github/github-original.svg" height="15"> | E-mail
+:---|:---:
+[Vinícius](https://github.com/viniciusFelipeS) | viniciusfelipe.xd@gmail.com 
+[Eduardo](https://github.com/EM180303) | e.marques180303@gmail.com
+[Nicolas](https://github.com/nicolasmonteiro) | nicolas-monteiro@outlook.com
+[izadora](https://github.com/izadora-oliveira) | izamartins7@outlook.com
+ 
 
-- [Eduardo](https://github.com/EM180303) 
-- [Izadora](https://github.com/izadora-oliveira)
-- [Vinícius](https://github.com/viniciusFelipeS)
-- [Nicolas](https://github.com/nicolasmonteiro)
 
