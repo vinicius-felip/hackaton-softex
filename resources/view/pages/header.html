@@ -1,5 +1,5 @@
 <nav
-  class="navbar navbar-expand-xl d-flex flex-column menu shadow"
+  class="navbar navbar-expand-xl  flex-column menu shadow"
   style="width: 4.5rem"
 >
   <a
@@ -13,41 +13,43 @@
       height="60"
     />
   </a>
-  <a
-    type="button"
-    class="nav-link navbar-toggler"
-    title="Mapa"
-    data-target="Menu"
-    data-bs-toggle="tooltip"
-    data-bs-placement="right"
-  >
-    <i class="fas fa-map"></i>
-  </a>
-  <div class="collapse navbar-collapse mt-5" id="Menu">
-    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-      <li class="nav-item py-4">
-        <a
-          href="{{URL_BASE}}"
-          class="nav-link"
-          title="Mapa"
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-        >
-          <i class="fas fa-map"></i>
-        </a>
-      </li>
-      <li class="nav-item py-4">
-        <a
-          href="{{URL_BASE}}/sobre"
-          class="nav-link"
-          title="Sobre"
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-        >
-          <i class="fas fa-info-circle"></i>
-        </a>
-      </li>
-    </ul>
+  <div class="mb-auto">
+    <a
+      role="button"
+      class="nav-link navbar-toggler"
+      title="Mapa"
+      data-bs-toggle="collapse"
+      data-bs-target="#menuja"
+      aria-expanded="false"
+    >
+    <i class="fas fa-bars"></i>
+    </a>
+    <div class="collapse navbar-collapse mt-5" id="menuja">
+      <ul class="navbar-nav d-flex flex-column  mb-auto text-center">
+        <li class="nav-item py-4">
+          <a
+            href="{{URL_BASE}}"
+            class="nav-link"
+            title="Mapa"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+          >
+            <i class="fas fa-map"></i>
+          </a>
+        </li>
+        <li class="nav-item py-4">
+          <a
+            href="{{URL_BASE}}/sobre"
+            class="nav-link"
+            title="Sobre"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+          >
+            <i class="fas fa-info-circle"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
   {{login}}
 </nav>
