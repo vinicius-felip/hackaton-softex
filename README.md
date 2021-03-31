@@ -16,7 +16,14 @@ https://youtu.be/9YKGhhUAaQY
 
 *ODS 12 – Consumo e produção responsáveis*
 
-### 👷 Como rodar
+<br/>
+
+## 🖥️ Aparência do site
+<img src="resources/view/images/print.jpg"/>
+
+<br/>
+
+## 👷 Como rodar
 
 ```bash
 # Clone o repositório
