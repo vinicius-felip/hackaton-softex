@@ -1,4 +1,4 @@
-# Hackaton SOFTEX
+# Hackaton SOFTEX - Recicle Já
 Hackaton oferecido pela SOFTEX como finalização do curso de desenvolvimento de software.
 
 ## Sobre
