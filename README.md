@@ -22,3 +22,4 @@ Objetivos de Desenvolvimento Sustentável (ODS)
  - HTML5
  - CSS3
  - JS
+![alt text](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
