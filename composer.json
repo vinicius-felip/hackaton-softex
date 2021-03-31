@@ -1,5 +1,6 @@
 {
     "name": "hackaton/softex",
+    "description": "Hackaton oferecido pela SOFTEX como finalização do curso de desenvolvimento de software.",
     "autoload": {
         "psr-4": {
             "App\\": "app/"
