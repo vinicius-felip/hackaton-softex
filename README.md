@@ -4,6 +4,9 @@ Hackaton oferecido pela SOFTEX como finalização do curso de desenvolvimento de
 ## Sobre
 Este projeto foi criado com o intuito de informar e tornar mais rápido a localização dos pontos de coleta no Recife, aqui você pode escolher o ponto de coleta pelo tipo de residuo que queira entregar, além de promover ações para estimular a reciclagem e outros assuntos relacionados, mostrando a importância e os benefícios da reciclagem.
 
+## Video sobre o projeto
+https://youtu.be/Eu2Oe27skro
+
 ## Tema
 Objetivos de Desenvolvimento Sustentável (ODS)
 
@@ -18,8 +21,7 @@ Objetivos de Desenvolvimento Sustentável (ODS)
 
 
 ## Linguagens
-- ![alt text](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
- - 
- - 
- -
- 
+ - PHP
+ - HTML5
+ - CSS3
+ - JS
