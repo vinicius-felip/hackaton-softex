@@ -19,8 +19,11 @@ $obRouter->post('/inserir', [fn ($request) => Pages\Insert::insertMarker($reques
 //ROTA RECEBER MARCADOR (view)
 $obRouter->get('/admin', [fn () => Pages\Admin::getMarker()]);
 
-//ROTA UPDATE MARCADOR (insert)
+//ROTA ATUALIZAR MARCADOR (update)
 $obRouter->post('/admin', [fn ($request) => Pages\Admin::updateMarker($request)]);
+
+//ROTA DELETAR MARCADOR (delete)
+$obRouter->post('/admin/delete', [fn ($request) => Pages\Admin::deleteMarker($request)]);
 
 //ROTA AUTENTICAÇÃO FACEBOOK
 $obRouter->get('/facebook', [fn ($request) => Auth::getHome($request)]);

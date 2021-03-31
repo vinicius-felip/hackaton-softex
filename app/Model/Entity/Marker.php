@@ -73,7 +73,7 @@ class Marker
     /**
      * Método responsável por atualizar um marcador
      *
-     * @return void
+     * @return boolean
      */
     public function updateMarker()
     {
@@ -81,6 +81,18 @@ class Marker
         (new DataBase('markers'))->update([
             'status' => $this->status
         ], "id = $this->id");
+        return true;
+    }
+
+    /**
+     * Método responsável por atualizar um marcador
+     *
+     * @return boolean
+     */
+    public function deleteMarker()
+    {
+        //INSERE NO BANCO DE DADOS
+        (new DataBase('markers'))->delete("id = $this->id");
         return true;
     }
 

@@ -13,18 +13,17 @@ function initMap() {
     zoom: 12,
     styles: [
       {
-        "featureType": "poi",
-        "elementType": "labels",
-        "stylers": [
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [
           {
-            "visibility": "off"
-          }
-        ]
-      }
-    ]
+            visibility: "off",
+          },
+        ],
+      },
+    ],
   });
 
-  
   var infoWindow = new google.maps.InfoWindow();
 
   downloadUrl("resources/api/maps.php", function (data) {
@@ -44,21 +43,34 @@ function initMap() {
                                     <label>Tipo: </label>
                                     <select  id="type" disabled>
                                       <option>Indefinido</option>
-                                      <option value="0" ${type == '0' ? 'selected': ''}>Orgânico</option>
-                                      <option value="1" ${type == '1' ? 'selected': ''}>Plastico</option>
-                                      <option value="2" ${type == '2' ? 'selected': ''}>Eletrônico</option>
-                                      <option value="3" ${type == '3' ? 'selected': ''}>Vidro</option>
-                                      <option value="4" ${type == '4' ? 'selected': ''}>Metal</option>
-                                      <option value="5" ${type == '5' ? 'selected': ''}>Papel</option>
+                                      <option value="0" ${
+                                        type == "0" ? "selected" : ""
+                                      }>Orgânico</option>
+                                      <option value="1" ${
+                                        type == "1" ? "selected" : ""
+                                      }>Plastico</option>
+                                      <option value="2" ${
+                                        type == "2" ? "selected" : ""
+                                      }>Eletrônico</option>
+                                      <option value="3" ${
+                                        type == "3" ? "selected" : ""
+                                      }>Vidro</option>
+                                      <option value="4" ${
+                                        type == "4" ? "selected" : ""
+                                      }>Metal</option>
+                                      <option value="5" ${
+                                        type == "5" ? "selected" : ""
+                                      }>Papel</option>
                                     </select>
                                   </div>
                                   <div class="col-12">
                                     <label> Ativo: </label>
                                     <input type="checkbox" id="checkbox" value="${id}" ${
-                                      status == "on" ? "checked" : ""
-                                    }>
+        status == "on" ? "checked" : ""
+      }>
                                   </div>
-                                  <button class="btn-success" role="button" value='Send' onclick='saveData()'>Salvar</button>
+                                  <button class="btn btn-sm btn-success" role="button" value='Send' onclick='saveData()'>Salvar</button>
+                                  <button class="btn btn-sm btn-outline-danger" role="button" value='Send' onclick='removeData()'>Remover</button>
                                 </div>
                               </div>`;
 
@@ -98,6 +110,18 @@ function saveData() {
     "hackaton/admin",
     {
       status: confirmed == 1 ? "on" : "off",
+      id: id,
+    },
+    function () {
+      initMap();
+    }
+  );
+}
+function removeData() {
+  var id = document.getElementById("checkbox").value;
+  $.post(
+    "hackaton/admin/delete",
+    {
       id: id,
     },
     function () {

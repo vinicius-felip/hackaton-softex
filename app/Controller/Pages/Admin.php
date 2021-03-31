@@ -7,46 +7,69 @@ use App\Utils\View;
 use App\Http\Response;
 use App\Model\Entity\Marker;
 
-class Admin extends Page{
-    
+class Admin extends Page
+{
+
+  /**
+   * Método responsável por retornar o conteudo da /inserir
+   *  
+   * @return string
+   */
+  public static function getMarker()
+  {
+    //VERIFICAR SE ADMIN ESTÁ LOGADO
+    Auth::logged();
+
+    //VIEW DA MARKER
+
+    $content = View::render('pages/admin', []);
+
+    //RETORNA A VIEW DA PAGINA
+    return new Response(200, parent::getPage('Recicle Já', $content));
+  }
+
+  /**
+   * Método responsável por atualizar um marcador no bando de dados
+   *
+   * @param  Request $request
+   * @return string
+   */
+  public static function updateMarker($request)
+  {
+
+    //DADOS POST
+    $postVars = $request->getPostVars();
+
+    //NOVA INSTANCIA DE MARKER
+    $obMarker = new Marker;
+    $obMarker->id = $postVars['id'];
+    $obMarker->status = $postVars['status'];
+
+    //ATUALIZAR
+    $obMarker->updateMarker();
+
+    return new Response(200, 'Concluido');
+  }
+
     /**
-     * Método responsável por retornar o conteudo da /inserir
-     *  
-     * @return string
-     */
-    public static function getMarker(){
-      //VERIFICAR SE ADMIN ESTÁ LOGADO
-      Auth::logged();
+   * Método responsável por atualizar um marcador no bando de dados
+   *
+   * @param  Request $request
+   * @return string
+   */
+  public static function deleteMarker($request)
+  {
 
-      //VIEW DA MARKER
-      
-      $content = View::render('pages/admin',[
-      ]);
+    //DADOS POST
+    $postVars = $request->getPostVars();
 
-      //RETORNA A VIEW DA PAGINA
-      return new Response(200, parent::getPage('Recicle Já', $content));
-    } 
-    
-    /**
-     * Método responsável por atualizar um marcador no bando de dados
-     *
-     * @param  Request $request
-     * @return string
-     */
-    public static function updateMarker($request)
-    {
+    //NOVA INSTANCIA DE MARKER
+    $obMarker = new Marker;
+    $obMarker->id = $postVars['id'];
 
-        //DADOS POST
-        $postVars = $request->getPostVars();
-       
-        //NOVA INSTANCIA DE MARKER
-        $obMarker = new Marker;
-        $obMarker->id = $postVars['id'];
-        $obMarker->status = $postVars['status'];
+    //ATUALIZAR
+    $obMarker->deleteMarker();
 
-        //ATUALIZAR
-        $obMarker->updateMarker();
-        
-        return new Response(200, 'Concluido');
-    }
+    return new Response(200, 'Concluido');
+  }
 }
